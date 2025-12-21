@@ -1,0 +1,8 @@
+test-dependencies:
+  - io.mockk:mockk:1.13.10
+
+settings:
+  jvm:
+    release: 17
+  kotlin:
+    version: 2.2.21
