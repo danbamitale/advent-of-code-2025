@@ -1,18 +1,27 @@
 package com.aoc.day_one
 
+import java.io.InputStream
+
 object Solution {
 
-    fun solve(inputFile: String): Int {
-        var count = 0
-        val stream = InputParser.Companion::class.java.getResourceAsStream(inputFile) ?: throw RuntimeException("Cannot find the input")
+    fun getSolutionOne(stream: InputStream): Int {
         val inputs = InputParser.parse(stream)
         val lock = PasswordLock()
         for (input in inputs) {
-            if (lock.dial(input) == 0) {
-                count++
-            }
+            lock.dial(input)
         }
 
-        return count
+        return lock.zeroCounter
     }
+
+    fun getSolutionTwo(stream: InputStream): Int {
+        val inputs = InputParser.parse(stream)
+        val lock = TransitionTrackingPasswordLock()
+        for (input in inputs) {
+            lock.dial(input)
+        }
+
+        return lock.zeroCounter
+    }
+
 }

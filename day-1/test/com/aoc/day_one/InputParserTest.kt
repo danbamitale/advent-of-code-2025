@@ -1,12 +1,8 @@
+package com.aoc.day_one
 
-import com.aoc.day_one.DialDirection
-import com.aoc.day_one.DialInput
-import com.aoc.day_one.InputParser
 import java.io.ByteArrayInputStream
-import java.io.FileInputStream
 import kotlin.test.Test
 import kotlin.test.assertEquals
-
 
 class InputParserTest {
 
